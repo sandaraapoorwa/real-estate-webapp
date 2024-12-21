@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <Container className="my-5">
-      <h1 className="text-center mb-5">Welcome to Dream Home Realty</h1>
+      <h1 className="text-center mb-5">Welcome to Dream Home</h1>
       <h2 className="mb-4">Featured Properties</h2>
       <Row>
         {featuredProperties.map((property) => (
