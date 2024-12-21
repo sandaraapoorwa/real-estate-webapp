@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <Container className="my-5">
       <h1 className="text-center mb-5">Welcome to Dream Home</h1>
-      <h2 className="mb-4">Featured Properties</h2>
+      <h2 className="mb-4">Top Selling Properties</h2>
       <Row>
         {featuredProperties.map((property) => (
           <Col key={property.id} md={4} className="mb-4">
