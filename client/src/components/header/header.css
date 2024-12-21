@@ -6,6 +6,10 @@
     font-size: 1.5rem;
   }
   
+  .navbar-brand span:first-child {
+    font-size: 1.8rem;
+  }
+  
   .nav-link {
     font-weight: 500;
     color: #333 !important;

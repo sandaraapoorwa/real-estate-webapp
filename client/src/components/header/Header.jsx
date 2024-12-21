@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
-import { HomeIcon as House } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
@@ -8,7 +7,7 @@ const Header = () => {
     <Navbar bg="white" expand="lg" className="shadow-sm py-3">
       <Container>
         <Navbar.Brand href="#home" className="d-flex align-items-center">
-          <House className="text-primary me-2" size={24} />
+          <span className="font-weight-bold text-primary me-2">🏠</span>
           <span className="font-weight-bold">Dream Home Realty</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
