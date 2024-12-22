@@ -26,3 +26,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-left: -10px;
 }
 
+.form-label {
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.form-control::placeholder {
+  font-size: 0.9rem;
+}
+
+.form-control, .form-select {
+  font-size: 0.9rem;
+  padding: 0.375rem 0.5rem;
+}
+

@@ -1,15 +1,18 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import SearchBar from '../searchbar/SearchBar';;
+import SearchBar from '../searchbar/SearchBar';
 import './Home.css';
+import apartmentImage from '../Photos/apartment.png';
+import familyHome from '../Photos/home.jpg'
+import luxuryVilla from '../Photos/luxury.jpg'
 
 const Home = () => {
   const featuredProperties = [
-    { id: 1, title: 'Modern Apartment', price: '$250,000', image: './assets' },
-    { id: 2, title: 'Cozy Family Home', price: '$450,000', image: './assets/photos/home.jpg' },
-    { id: 3, title: 'Luxury Villa', price: '$1,200,000', image: './assets/photos/luxury.jpg' }
+    { id: 1, title: 'Modern Apartment', price: '$250,000', image: apartmentImage },
+    { id: 2, title: 'Cozy Family Home', price: '$450,000', image: familyHome },
+    { id: 3, title: 'Luxury Villa', price: '$1,200,000', image: luxuryVilla }
   ];
-
+  
   const handleSearch = (searchParams) => {
     // In a real application, this would typically trigger a search
     // and update the list of properties. For now, we'll just log the params.
