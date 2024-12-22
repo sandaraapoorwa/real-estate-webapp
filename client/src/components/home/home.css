@@ -1,14 +1,27 @@
 .hero-section {
-    background-image: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7)), url('/placeholder.svg?height=400&width=1200');
-    background-size: cover;
-    background-position: center;
-    padding: 100px 0;
-  }
+  /* Apply a linear gradient overlay and a background image */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(13, 12, 12, 0.7)), 
+    url('/placeholder.svg?height=400&width=1200'); /* Make sure the path to the image is correct */
   
-  .hero-section h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-  }
+  /* Ensure the background image covers the entire section */
+  background-size: cover;
+  background-position: center;
   
+  /* Set padding for the section */
+  padding: 100px 0; 
   
+  /* Adjust text color to make it visible on the gradient background */
+  color: white;
+}
+
+.hero-section h1 {
+  /* Set a large font size for the title */
+  font-size: 5rem;
+  
+  /* Make the title bold */
+  font-weight: bold;
+  
+  /* Add some margin below the title */
+  margin-bottom: 2rem;
+}

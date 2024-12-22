@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 import SearchBar from '../searchbar/SearchBar';
 import './Home.css';
 
+// Example of featured properties data
+const featuredProperties = [
+  { id: 1, title: 'Modern Apartment', price: '$250,000', image: '/assets/photos/apartment.jpg' },
+  { id: 2, title: 'Cozy Family Home', price: '$450,000', image: '/assets/photos/home.jpg' },
+  { id: 3, title: 'Luxury Villa', price: '$1,200,000', image: '/assets/photos/luxury.jpg' },
+];
+
 const Home = () => {
   const handleSearch = (searchParams) => {
     console.log('Search params:', searchParams);
@@ -22,6 +29,8 @@ const Home = () => {
           </Row>
         </Container>
       </div>
+
+      {/* Main content */}
       <Container className="my-5">
         <Row>
           <Col md={4} className="mb-4">
@@ -45,6 +54,30 @@ const Home = () => {
               <Button variant="primary">Contact Us</Button>
             </Link>
           </Col>
+        </Row>
+      </Container>
+
+      {/* Featured Properties Section */}
+      <Container className="my-5">
+        <h2 className="text-center mb-4">Featured Properties</h2>
+        <Row>
+          {featuredProperties.map((property) => (
+            <Col md={4} key={property.id} className="mb-4">
+              <div className="featured-property-box">
+                <img
+                  src={property.image}
+                  alt={property.title}
+                  className="img-fluid mb-3"
+                  style={{ height: '200px', objectFit: 'cover' }}
+                />
+                <h4>{property.title}</h4>
+                <p>{property.price}</p>
+                <Link to={`/property/${property.id}`}>
+                  <Button variant="primary">View Details</Button>
+                </Link>
+              </div>
+            </Col>
+          ))}
         </Row>
       </Container>
     </div>

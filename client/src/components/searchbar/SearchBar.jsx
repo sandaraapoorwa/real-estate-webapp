@@ -30,7 +30,7 @@ const SearchBar = ({ onSearch }) => {
             name="type" 
             value={searchParams.type} 
             onChange={handleInputChange}
-            className="border-0 bg-white bg-opacity-75"
+            className="border-0 bg-white bg-opacity-85"
           >
             <option value="any">Any Type</option>
             <option value="house">House</option>
