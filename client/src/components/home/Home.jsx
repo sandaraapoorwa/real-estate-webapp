@@ -1,12 +1,13 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import SearchBar from '';
+import SearchBar from '../searchbar/SearchBar';;
+import './Home.css';
 
 const Home = () => {
   const featuredProperties = [
-    { id: 1, title: 'Modern Apartment', price: '$250,000', image: '/placeholder.svg?height=200&width=300' },
-    { id: 2, title: 'Cozy Family Home', price: '$450,000', image: '/placeholder.svg?height=200&width=300' },
-    { id: 3, title: 'Luxury Villa', price: '$1,200,000', image: '/placeholder.svg?height=200&width=300' },
+    { id: 1, title: 'Modern Apartment', price: '$250,000', image: './assets' },
+    { id: 2, title: 'Cozy Family Home', price: '$450,000', image: './assets/photos/home.jpg' },
+    { id: 3, title: 'Luxury Villa', price: '$1,200,000', image: './assets/photos/luxury.jpg' }
   ];
 
   const handleSearch = (searchParams) => {

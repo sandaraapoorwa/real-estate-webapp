@@ -1,0 +1,28 @@
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  border-color: transparent;
+}
+
+.form-control[type="date"] {
+  padding-right: 10px;
+}
+
+.form-control[type="date"]::-webkit-calendar-picker-indicator {
+  margin-left: 0;
+}
+
+.bi-search {
+  font-size: 1.2rem;
+}
+
+.btn-primary {
+  height: 38px;
+}
+
+/* Make date inputs more compact */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  margin-left: -10px;
+}
+
