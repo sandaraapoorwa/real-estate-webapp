@@ -5,10 +5,8 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     message: '',
   });
-
   const [showAlert, setShowAlert] = useState(false);
 
   const handleInputChange = (e) => {
@@ -18,23 +16,22 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a server
     console.log('Form submitted:', formData);
     setShowAlert(true);
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setFormData({ name: '', email: '', message: '' });
     setTimeout(() => setShowAlert(false), 5000);
   };
 
   return (
     <Container className="my-5">
-      <h2 className="text-center mb-4">Contact Us</h2>
+      <h1 className="text-center mb-4">Contact Us</h1>
       {showAlert && (
         <Alert variant="success" onClose={() => setShowAlert(false)} dismissible>
           Thank you for your message. We'll get back to you soon!
         </Alert>
       )}
-      <Row className="justify-content-center">
-        <Col md={8}>
+      <Row>
+        <Col md={6}>
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
               <Form.Label>Name</Form.Label>
@@ -57,15 +54,6 @@ const Contact = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Phone</Form.Label>
-              <Form.Control
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleInputChange}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
               <Form.Label>Message</Form.Label>
               <Form.Control
                 as="textarea"
@@ -81,19 +69,16 @@ const Contact = () => {
             </Button>
           </Form>
         </Col>
-      </Row>
-      <Row className="mt-5">
         <Col md={6}>
-          <h3>Our Office</h3>
+          <h2>Our Office</h2>
           <p>123 Real Estate Street</p>
           <p>Cityville, State 12345</p>
-          <p>United States</p>
-        </Col>
-        <Col md={6}>
-          <h3>Contact Information</h3>
           <p>Phone: (123) 456-7890</p>
           <p>Email: info@dreamhomerealty.com</p>
-          <p>Hours: Monday - Friday, 9am - 5pm</p>
+          <h3 className="mt-4">Office Hours</h3>
+          <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+          <p>Saturday: 10:00 AM - 2:00 PM</p>
+          <p>Sunday: Closed</p>
         </Col>
       </Row>
     </Container>
@@ -101,4 +86,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
