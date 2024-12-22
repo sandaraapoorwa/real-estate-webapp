@@ -2,21 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import SearchBar from '../searchbar/SearchBar';
 
+
 const Properties = () => {
   const initialProperties = [
-    { id: 1, title: 'Modern Apartment', price: 250000, type: 'flat', bedrooms: 2, dateAdded: '2023-05-01', postcodeArea: 'BR1', image: '/placeholder.svg?height=200&width=300' },
+    { id: 1, title: 'Modern Apartment', price: 250000, type: 'flat', bedrooms: 2, dateAdded: '2023-05-01', postcodeArea: 'BR1', image: '.?height=200&width=300' },
     { id: 2, title: 'Cozy Family Home', price: 450000, type: 'house', bedrooms: 4, dateAdded: '2023-05-05', postcodeArea: 'NW1', image: '/placeholder.svg?height=200&width=300' },
     { id: 3, title: 'Luxury Villa', price: 1200000, type: 'house', bedrooms: 5, dateAdded: '2023-05-10', postcodeArea: 'SW3', image: '/placeholder.svg?height=200&width=300' },
     { id: 4, title: 'Urban Loft', price: 350000, type: 'flat', bedrooms: 1, dateAdded: '2023-05-15', postcodeArea: 'E1', image: '/placeholder.svg?height=200&width=300' },
     { id: 5, title: 'Suburban House', price: 550000, type: 'house', bedrooms: 3, dateAdded: '2023-05-20', postcodeArea: 'SE1', image: '/placeholder.svg?height=200&width=300' },
-    { id: 6, title: 'Beachfront Condo', price: 750000, type: 'flat', bedrooms: 2, dateAdded: '2023-05-25', postcodeArea: 'BN1', image: '/placeholder.svg?height=200&width=300' },
-    { id: 7, title: 'Beachfront Condo', price: 750000, type: 'flat', bedrooms: 2, dateAdded: '2023-05-25', postcodeArea: 'BN1', image: '/placeholder.svg?height=200&width=300' },
-    { id: 8, title: 'Beachfront Condo', price: 750000, type: 'flat', bedrooms: 2, dateAdded: '2023-05-25', postcodeArea: 'BN1', image: '/placeholder.svg?height=200&width=300' },
-    { id: 9, title: 'Beachfront Condo', price: 750000, type: 'flat', bedrooms: 2, dateAdded: '2023-05-25', postcodeArea: 'BN1', image: '/placeholder.svg?height=200&width=300' },
-    { id: 10, title: 'Beachfront Condo', price: 750000, type: 'flat', bedrooms: 2, dateAdded: '2023-05-25', postcodeArea: 'BN1', image: '/placeholder.svg?height=200&width=300' },
-    { id: 11, title: 'Beachfront Condo', price: 750000, type: 'flat', bedrooms: 2, dateAdded: '2023-05-25', postcodeArea: 'BN1', image: '/placeholder.svg?height=200&width=300' },
-    { id: 12, title: 'Beachfront Condo', price: 750000, type: 'flat', bedrooms: 2, dateAdded: '2023-05-25', postcodeArea: 'BN1', image: '/placeholder.svg?height=200&width=300' },
+    { id: 6, title: 'Modern Villa', price: 750000, type: 'villa', bedrooms: 3, dateAdded: '2023-05-25', postcodeArea: 'BN1', image: '/placeholder.svg?height=200&width=300' },
+    { id: 7, title: 'Charming Cottage', price: 500000, type: 'house', bedrooms: 2, dateAdded: '2023-06-01', postcodeArea: 'SW7', image: '/placeholder.svg?height=200&width=300' },
+    { id: 8, title: 'Spacious Loft', price: 650000, type: 'loft', bedrooms: 2, dateAdded: '2023-06-05', postcodeArea: 'W1', image: '/placeholder.svg?height=200&width=300' },
+    { id: 9, title: 'Luxury Mansion', price: 2500000, type: 'house', bedrooms: 6, dateAdded: '2023-06-10', postcodeArea: 'NW3', image: '/placeholder.svg?height=200&width=300' },
+    { id: 10, title: 'Elegant Townhouse', price: 850000, type: 'house', bedrooms: 4, dateAdded: '2023-06-15', postcodeArea: 'HA1', image: '/placeholder.svg?height=200&width=300' },
+    { id: 11, title: 'City Center Condo', price: 700000, type: 'flat', bedrooms: 2, dateAdded: '2023-06-20', postcodeArea: 'E2', image: '/placeholder.svg?height=200&width=300' },
+    { id: 12, title: 'Gated Community Home', price: 1200000, type: 'house', bedrooms: 5, dateAdded: '2023-06-25', postcodeArea: 'SE2', image: '/placeholder.svg?height=200&width=300' },
   ];
+  
 
   const [properties, setProperties] = useState(initialProperties);
 

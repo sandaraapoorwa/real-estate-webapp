@@ -10,7 +10,6 @@ const featuredProperties = [
   { id: 2, title: 'Cozy Family Home', price: '$450,000', image: '/assets/photos/home.jpg' },
   { id: 3, title: 'Luxury Villa', price: '$1,200,000', image: '/assets/photos/luxury.jpg' },
 ];
-
 const Home = () => {
   const handleSearch = (searchParams) => {
     console.log('Search params:', searchParams);
