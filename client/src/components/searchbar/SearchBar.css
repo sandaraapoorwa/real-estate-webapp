@@ -1,11 +1,11 @@
 .form-control:focus,
 .form-select:focus {
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-  border-color: transparent;
+  box-shadow: 0 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  border-color: tan;
 }
 
 .form-control[type="date"] {
-  padding-right: 10px;
+  padding-right: 100px;
 }
 
 .form-control[type="date"]::-webkit-calendar-picker-indicator {
@@ -29,6 +29,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .form-label {
   font-size: 0.9rem;
   white-space: nowrap;
+  
 }
 
 .form-control::placeholder {
