@@ -1,0 +1,96 @@
+/* Contact page background gradient */
+.contact-container {
+    background: linear-gradient(200deg, #a1c4fd, #c2e9fb);
+    padding: 100px 0;
+    border-radius: 20px;
+    width: 2000px;
+  }
+  
+  /* Center form heading */
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  /* Contact card styling */
+  .contact-card,
+  .contact-info-card {
+    border-radius: 20px;
+    background-color: #ffffff;
+    padding: 5px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  /* Input fields */
+  .form-control {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  /* Button styling */
+  button {
+    background-color: #0a420c;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Alert box styling */
+  .alert {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Office info section styling */
+  .contact-info-card h2 {
+    font-size: 24px;
+    color: #360808;
+    font-weight: 700;
+  }
+  
+  .contact-info-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .contact-info-card ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .contact-info-card ul li {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .contact-container {
+      padding: 20px;
+    }
+  
+    .contact-card,
+    .contact-info-card {
+      margin-bottom: 15px;
+    }
+  }
+  

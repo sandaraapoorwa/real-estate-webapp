@@ -1,138 +1,112 @@
 import React, { useState } from 'react';
-import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { DropdownList, NumberPicker, DateTimePicker } from 'react-widgets';
+import 'react-widgets/styles.css';
 import '../searchbar/SearchBar.css';
 
 const SearchBar = ({ onSearch }) => {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useState({
-    type: '',
-    minPrice: '',
-    maxPrice: '',
-    minBedrooms: '',
-    maxBedrooms: '',
-    dateAdded: '',
-    postcodeArea: '',
+    type: null,
+    minPrice: null,
+    maxPrice: null,
+    minBedrooms: null,
+    maxBedrooms: null,
+    dateAdded: null,
+    postcodeArea: ''
   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setSearchParams({ ...searchParams, [name]: value });
-  };
+  const propertyTypes = [
+    { id: 'any', name: 'Any Type' },
+    { id: 'house', name: 'House' },
+    { id: 'flat', name: 'Flat' }
+  ];
 
-  const handleSubmit = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
-    if (Object.values(searchParams).every(value => value !== '')) {
-      onSearch(searchParams);
-      navigate('/properties', { state: { searchParams } });
-    } else {
-      alert('Please fill in all fields before searching.');
-    }
+    onSearch(searchParams);
+    navigate('/properties', { state: { searchParams } });
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="search-bar bg-white p-4 rounded-lg shadow">
-      <Row className="g-3">
-        <Col md={3}>
-          <Form.Group>
-            <Form.Label>Property Type</Form.Label>
-            <Form.Select 
-              name="type" 
-              value={searchParams.type} 
-              onChange={handleInputChange}
-              required
-            >
-              <option value="">Select Type</option>
-              <option value="house">House</option>
-              <option value="flat">Flat</option>
-            </Form.Select>
-          </Form.Group>
-        </Col>
-        <Col md={3}>
-          <Form.Group>
-            <Form.Label>Price Range</Form.Label>
-            <div className="d-flex">
-              <Form.Control
-                type="number"
-                placeholder="Min"
-                name="minPrice"
-                value={searchParams.minPrice}
-                onChange={handleInputChange}
-                className="me-2"
-                required
-              />
-              <Form.Control
-                type="number"
-                placeholder="Max"
-                name="maxPrice"
-                value={searchParams.maxPrice}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-          </Form.Group>
-        </Col>
-        <Col md={2}>
-          <Form.Group>
-            <Form.Label>Bedrooms</Form.Label>
-            <div className="d-flex">
-              <Form.Control
-                type="number"
-                placeholder="Min"
-                name="minBedrooms"
-                value={searchParams.minBedrooms}
-                onChange={handleInputChange}
-                className="me-2"
-                required
-              />
-              <Form.Control
-                type="number"
-                placeholder="Max"
-                name="maxBedrooms"
-                value={searchParams.maxBedrooms}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-          </Form.Group>
-        </Col>
-        <Col md={2}>
-          <Form.Group>
-            <Form.Label>Date Added</Form.Label>
-            <Form.Control
-              type="date"
-              name="dateAdded"
-              value={searchParams.dateAdded}
-              onChange={handleInputChange}
-              required
+    <div className="search-bar-container">
+      <form onSubmit={handleSearch} className="search-form">
+        <div className="search-grid">
+          <div className="search-item">
+            <label>Property Type</label>
+            <DropdownList
+              data={propertyTypes}
+              dataKey="id"
+              textField="name"
+              defaultValue={propertyTypes[0]}
+              onChange={value => setSearchParams({ ...searchParams, type: value.id })}
             />
-          </Form.Group>
-        </Col>
-        <Col md={2}>
-          <Form.Group>
-            <Form.Label>Postcode</Form.Label>
-            <Form.Control
+          </div>
+
+          <div className="search-item">
+            <label>Price Range</label>
+            <div className="price-range">
+              <NumberPicker
+                placeholder="Min Price"
+                min={0}
+                step={1000}
+                format="#,###"
+                onChange={value => setSearchParams({ ...searchParams, minPrice: value })}
+              />
+              <NumberPicker
+                placeholder="Max Price"
+                min={0}
+                step={1000}
+                format="#,###"
+                onChange={value => setSearchParams({ ...searchParams, maxPrice: value })}
+              />
+            </div>
+          </div>
+
+          <div className="search-item">
+            <label>Bedrooms</label>
+            <div className="bedroom-range">
+              <NumberPicker
+                placeholder="Min Beds"
+                min={0}
+                max={10}
+                onChange={value => setSearchParams({ ...searchParams, minBedrooms: value })}
+              />
+              <NumberPicker
+                placeholder="Max Beds"
+                min={0}
+                max={10}
+                onChange={value => setSearchParams({ ...searchParams, maxBedrooms: value })}
+              />
+            </div>
+          </div>
+
+          <div className="search-item">
+            <label>Date Added</label>
+            <DateTimePicker
+              time={false}
+              onChange={value => setSearchParams({ ...searchParams, dateAdded: value })}
+            />
+          </div>
+
+          <div className="search-item">
+            <label>Postcode Area</label>
+            <input
               type="text"
-              placeholder="e.g., BR1"
-              name="postcodeArea"
-              value={searchParams.postcodeArea}
-              onChange={handleInputChange}
-              required
+              placeholder="e.g., SW1"
+              className="postcode-input"
+              onChange={e => setSearchParams({ ...searchParams, postcodeArea: e.target.value })}
             />
-          </Form.Group>
-        </Col>
-        <Col md={12} className="mt-3">
-          <Button 
-            variant="primary" 
-            type="submit" 
-            className="w-100 d-flex align-items-center justify-content-center"
-          >
-            <i className="bi bi-search me-2"></i>
-            Search Properties
-          </Button>
-        </Col>
-      </Row>
-    </Form>
+          </div>
+
+          <div className="search-item">
+            <button type="submit" className="search-button">
+              <i className="bi bi-search"></i> Search
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 };
 

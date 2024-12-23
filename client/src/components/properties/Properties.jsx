@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
-import SearchBar from '../searchbar/SearchBar';
-import '../properties/properties.css';
+import propertiesData from '../data/properties.json';
+import './Properties.css';
 
 const Properties = () => {
-  const initialProperties = [
-    { id: 1, title: 'Modern Apartment', price: 250000, type: 'flat', bedrooms: 2, dateAdded: '2023-05-01', postcodeArea: 'BR1', image: '/placeholder.svg?height=200&width=300' },
-    { id: 2, title: 'Cozy Family Home', price: 450000, type: 'house', bedrooms: 4, dateAdded: '2023-05-05', postcodeArea: 'NW1', image: '/placeholder.svg?height=200&width=300' },
-    { id: 3, title: 'Luxury Villa', price: 1200000, type: 'house', bedrooms: 5, dateAdded: '2023-05-10', postcodeArea: 'SW3', image: '/placeholder.svg?height=200&width=300' },
-    { id: 4, title: 'Urban Loft', price: 350000, type: 'flat', bedrooms: 1, dateAdded: '2023-05-15', postcodeArea: 'E1', image: '/placeholder.svg?height=200&width=300' },
-    { id: 5, title: 'Suburban House', price: 550000, type: 'house', bedrooms: 3, dateAdded: '2023-05-20', postcodeArea: 'SE1', image: '/placeholder.svg?height=200&width=300' },
-    { id: 6, title: 'Beachfront Condo', price: 750000, type: 'flat', bedrooms: 2, dateAdded: '2023-05-25', postcodeArea: 'BN1', image: '/placeholder.svg?height=200&width=300' },
-  ];
-
-  const [properties, setProperties] = useState(initialProperties);
+  const [properties, setProperties] = useState(propertiesData.properties);
   const [selectedProperty, setSelectedProperty] = useState(null);
   const location = useLocation();
 
@@ -25,7 +16,7 @@ const Properties = () => {
   }, [location]);
 
   const handleSearch = (searchParams) => {
-    const filteredProperties = initialProperties.filter(property => {
+    const filteredProperties = propertiesData.properties.filter(property => {
       const matchesType = searchParams.type === '' || property.type === searchParams.type;
       const matchesPrice = (searchParams.minPrice === '' || property.price >= parseInt(searchParams.minPrice)) &&
                            (searchParams.maxPrice === '' || property.price <= parseInt(searchParams.maxPrice));
@@ -47,7 +38,6 @@ const Properties = () => {
   return (
     <Container className="my-5 fade-in">
       <h1 className="text-center mb-4">Our Properties</h1>
-      <SearchBar onSearch={handleSearch} />
       
       {selectedProperty && (
         <Row className="my-4 fade-in">
@@ -107,4 +97,3 @@ const Properties = () => {
 };
 
 export default Properties;
-

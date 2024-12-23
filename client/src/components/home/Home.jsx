@@ -2,13 +2,16 @@ import React from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchBar from '../searchbar/SearchBar';
+import apartment from '../Photos/apartment.png';
+import home from '../Photos/home.jpg';
+import luxury from '../Photos/luxury.jpg';
 import './Home.css';
 
 // Example of featured properties data
 const featuredProperties = [
-  { id: 1, title: 'Modern Apartment', price: '$250,000', image: '/assets/photos/apartment.jpg', description: 'A sleek and modern apartment in the heart of the city.', bedrooms: 2, bathrooms: 2, area: '1,000 sqft' },
-  { id: 2, title: 'Cozy Family Home', price: '$450,000', image: '/assets/photos/home.jpg', description: 'A spacious family home with a large backyard in a quiet neighborhood.', bedrooms: 4, bathrooms: 3, area: '2,500 sqft' },
-  { id: 3, title: 'Luxury Villa', price: '$1,200,000', image: '/assets/photos/luxury.jpg', description: 'An exquisite villa with stunning views and high-end amenities.', bedrooms: 5, bathrooms: 4, area: '4,000 sqft' },
+  { id: 1, title: 'Modern Apartment', price: '$250,000', image: apartment, description: 'A sleek and modern apartment in the heart of the city.', bedrooms: 2, bathrooms: 2, area: '1,000 sqft' },
+  { id: 2, title: 'Cozy Family Home', price: '$450,000', image: home, description: 'A spacious family home with a large backyard in a quiet neighborhood.', bedrooms: 4, bathrooms: 3, area: '2,500 sqft' },
+  { id: 3, title: 'Luxury Villa', price: '$1,200,000', image: luxury, description: 'An exquisite villa with stunning views and high-end amenities.', bedrooms: 5, bathrooms: 4, area: '4,000 sqft' },
 ];
 
 const Home = () => {
