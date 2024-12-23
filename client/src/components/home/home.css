@@ -1,3 +1,8 @@
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
 .hero-section {
   /* Apply a linear gradient overlay and a background image */
   background-image: 
@@ -14,7 +19,9 @@
   /* Adjust text color to make it visible on the gradient background */
   color: white;
 }
-
+.home-container{
+  background-image: ;
+}
 
 .hero-section h1 {
   /* Set a large font size for the title */
