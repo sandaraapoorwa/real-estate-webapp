@@ -1,13 +1,10 @@
 
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
-
-
 .hero-section {
   /* Apply a linear gradient overlay and a background image */
-  background-image: 
-    linear-gradient(rgba(159, 236, 131, 0.7), rgba(80, 81, 75, 0.7)), 
-    url('/placeholder.svg?height=400&width=1200'); /* Make sure the path to the image is correct */
+  background-image: url('../Photos/cover2.jpg'); /* Corrected the syntax */
+  background-size: cover;  /* Ensures the image covers the entire container */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat;  /* Prevents the image from repeating *//* Make sure the path to the image is correct */
   
   /* Ensure the background image covers the entire section */
   background-size: cover;
@@ -19,8 +16,8 @@
   /* Adjust text color to make it visible on the gradient background */
   color: white;
 }
-.home-container{
-  background-image: ;
+.home-container {
+  
 }
 
 .hero-section h1 {
