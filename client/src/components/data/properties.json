@@ -8,7 +8,7 @@
             "bedrooms": 2,
             "dateAdded": "2023-05-01",
             "postcodeArea": "BR1",
-            "image": "../Photos/apartment.png"
+            "image": "/Photos/apartment.png"
           },
             {
             "id": 2,
@@ -18,7 +18,7 @@
             "bedrooms": 4,
             "dateAdded": "2023-05-05",
             "postcodeArea": "NW1",
-            "image": "/placeholder.svg?height=200&width=300"
+            "image": "/Photos/home.jpg"
             },
         {
             "id": 3,
@@ -28,7 +28,7 @@
             "bedrooms": 5,
             "dateAdded": "2023-05-10",
             "postcodeArea": "SW3",
-            "image": "/placeholder.svg?height=200&width=300"
+            "image": "/Photos/luxury.jpg"
         },
         {
             "id": 4,
@@ -38,7 +38,7 @@
             "bedrooms": 1,
             "dateAdded": "2023-05-15",
             "postcodeArea": "E1",
-            "image": "/placeholder.svg?height=200&width=300"
+            "image": "/Photos/loft.jpg"
         },
         {
             "id": 5,
@@ -48,7 +48,7 @@
             "bedrooms": 3,
             "dateAdded": "2023-05-20",
             "postcodeArea": "SE1",
-            "image": "/placeholder.svg?height=200&width=300"
+            "image": "/Photos/suburban.jpg"
         },
         {
             "id": 6,
@@ -58,7 +58,7 @@
             "bedrooms": 2,
             "dateAdded": "2023-05-25",
             "postcodeArea": "BN1",
-            "image": "/placeholder.svg?height=200&width=300"
+            "image": "/Photos/condo.jpeg"
         },
         {
             "id": 7,
@@ -68,7 +68,7 @@
             "bedrooms": 1,
             "dateAdded": "2023-05-25",
             "postcodeArea": "BN1",
-            "image": "/images/modern-studio-apartment.jpg?height=200&width=300"
+            "image": "/Photos/studio.jpg"
           },
           {
             "id": 8,
