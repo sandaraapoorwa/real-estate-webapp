@@ -1,0 +1,78 @@
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .card-text {
+    font-size: 1.1rem;
+  }
+  
+  .list-unstyled li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .search-bar {
+    margin-bottom: 2rem;
+  }
+  
+  .property-image {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .card-text {
+    font-size: 1.1rem;
+  }
+  
+  .list-unstyled li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .search-bar {
+    margin-bottom: 2rem;
+  }
+  
+  .property-image {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  

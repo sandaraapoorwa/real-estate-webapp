@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
-import { Facebook, Google } from 'react-bootstrap-icons'; // Adding Google icon
-import './SignupPopup.css'; // Importing custom CSS for styling
+import './SignupPopup.css';
 
 const SignupPopup = () => {
   const [show, setShow] = useState(false);
@@ -25,13 +24,11 @@ const SignupPopup = () => {
     }
   };
 
-  // Simulate Facebook login
   const handleFacebookLogin = () => {
     alert("Logging in with Facebook");
     // Add your Facebook login logic here
   };
 
-  // Simulate Google login
   const handleGoogleLogin = () => {
     alert("Logging in with Google");
     // Add your Google login logic here
@@ -39,18 +36,15 @@ const SignupPopup = () => {
 
   return (
     <>
-      {/* Button to trigger the popup */}
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} className="signup-button">
         Sign Up or Log In
       </Button>
 
-      {/* Modal for Sign Up / Log In */}
-      <Modal show={show} onHide={handleClose} centered>
+      <Modal show={show} onHide={handleClose} centered className="signup-modal">
         <Modal.Header closeButton>
           <Modal.Title>Sign Up or Log In</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {/* Email Form */}
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formEmail">
               <Form.Label>Email</Form.Label>
@@ -60,45 +54,46 @@ const SignupPopup = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 isInvalid={!!error}
+                className="modern-input"
               />
               <Form.Control.Feedback type="invalid">{error}</Form.Control.Feedback>
             </Form.Group>
 
-            {/* Terms and Conditions Checkbox */}
             <Form.Group className="mb-3">
               <Form.Check 
                 type="checkbox"
-                label="I accept Dream Home realty's Terms of Use and Privacy Policy."
+                label="I accept Dream Home Realty's Terms of Use and Privacy Policy."
                 checked={termsAccepted}
                 onChange={(e) => setTermsAccepted(e.target.checked)}
                 isInvalid={!!error}
-                className={termsAccepted ? "checkbox-highlight" : ""}
+                className={`modern-checkbox ${termsAccepted ? "checkbox-highlight" : ""}`}
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit" className="w-100 mb-3">
+            <Button variant="primary" type="submit" className="w-100 mb-3 modern-button">
               Submit
             </Button>
           </Form>
 
-          <div className="text-center">OR</div>
+          <div className="text-center my-3 or-divider">
+            <span>OR</span>
+          </div>
 
-          {/* Social Media Login Buttons */}
           <Button
             variant="outline-primary"
-            className="w-100 mt-3 d-flex align-items-center justify-content-center"
-            onClick={handleFacebookLogin} // Facebook login mock
+            className="w-100 mb-3 social-button facebook-button"
+            onClick={handleFacebookLogin}
           >
-            <Facebook size={20} className="me-2" />
+            <i className="bi bi-facebook me-2"></i>
             Continue with Facebook
           </Button>
           
           <Button
-            variant="outline-danger"
-            className="w-100 mt-3 d-flex align-items-center justify-content-center"
-            onClick={handleGoogleLogin} // Google login mock
+            variant="outline-secondary"
+            className="w-100 social-button google-button"
+            onClick={handleGoogleLogin}
           >
-            <Google size={20} className="me-2" />
+            <i className="bi bi-google me-2"></i>
             Sign Up with Google
           </Button>
         </Modal.Body>
@@ -108,3 +103,4 @@ const SignupPopup = () => {
 };
 
 export default SignupPopup;
+

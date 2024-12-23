@@ -1,19 +1,26 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Container, Row, Col, Button, Card } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 import SearchBar from '../searchbar/SearchBar';
 import './Home.css';
 
 // Example of featured properties data
 const featuredProperties = [
-  { id: 1, title: 'Modern Apartment', price: '$250,000', image: '/assets/photos/apartment.jpg' },
-  { id: 2, title: 'Cozy Family Home', price: '$450,000', image: '/assets/photos/home.jpg' },
-  { id: 3, title: 'Luxury Villa', price: '$1,200,000', image: '/assets/photos/luxury.jpg' },
+  { id: 1, title: 'Modern Apartment', price: '$250,000', image: '/assets/photos/apartment.jpg', description: 'A sleek and modern apartment in the heart of the city.', bedrooms: 2, bathrooms: 2, area: '1,000 sqft' },
+  { id: 2, title: 'Cozy Family Home', price: '$450,000', image: '/assets/photos/home.jpg', description: 'A spacious family home with a large backyard in a quiet neighborhood.', bedrooms: 4, bathrooms: 3, area: '2,500 sqft' },
+  { id: 3, title: 'Luxury Villa', price: '$1,200,000', image: '/assets/photos/luxury.jpg', description: 'An exquisite villa with stunning views and high-end amenities.', bedrooms: 5, bathrooms: 4, area: '4,000 sqft' },
 ];
+
 const Home = () => {
+  const navigate = useNavigate();
+
   const handleSearch = (searchParams) => {
     console.log('Search params:', searchParams);
     // Implement search functionality here
+  };
+
+  const handlePropertyClick = (property) => {
+    navigate('/properties', { state: { selectedProperty: property } });
   };
 
   return (
@@ -62,19 +69,25 @@ const Home = () => {
         <Row>
           {featuredProperties.map((property) => (
             <Col md={4} key={property.id} className="mb-4">
-              <div className="featured-property-box">
-                <img
+              <Card className="featured-property-box h-100">
+                <Card.Img
+                  variant="top"
                   src={property.image}
                   alt={property.title}
-                  className="img-fluid mb-3"
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
-                <h4>{property.title}</h4>
-                <p>{property.price}</p>
-                <Link to={`/property/${property.id}`}>
-                  <Button variant="primary">View Details</Button>
-                </Link>
-              </div>
+                <Card.Body className="d-flex flex-column">
+                  <Card.Title>{property.title}</Card.Title>
+                  <Card.Text className="text-primary font-weight-bold">{property.price}</Card.Text>
+                  <Button 
+                    variant="primary" 
+                    className="mt-auto"
+                    onClick={() => handlePropertyClick(property)}
+                  >
+                    View Details
+                  </Button>
+                </Card.Body>
+              </Card>
             </Col>
           ))}
         </Row>
@@ -84,3 +97,4 @@ const Home = () => {
 };
 
 export default Home;
+

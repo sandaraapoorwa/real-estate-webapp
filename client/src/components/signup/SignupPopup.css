@@ -1,10 +1,158 @@
-/* Custom CSS for highlighted checkbox */
-.checkbox-highlight .form-check-input:checked {
-    background-color: #007bff; /* Blue background when checked */
-    border-color: #007bff; /* Blue border when checked */
+.signup-button {
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
   }
   
-  .checkbox-highlight .form-check-input:checked:focus {
-    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25); /* Blue focus glow */
+  .signup-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
   }
+  
+  .signup-modal .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .signup-modal .modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .signup-modal .modal-title {
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .modern-input {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .modern-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    border-color: #80bdff;
+  }
+  
+  .modern-checkbox .form-check-input {
+    width: 1.25em;
+    height: 1.25em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid #adb5bd;
+    appearance: none;
+    color-adjust: exact;
+    transition: all 0.3s ease;
+  }
+  
+  .modern-checkbox .form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+  }
+  
+  .modern-checkbox .form-check-label {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .checkbox-highlight .form-check-label {
+    color: #0d6efd;
+  }
+  
+  .modern-button {
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .modern-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  }
+  
+  .or-divider {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .or-divider::before,
+  .or-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: #dee2e6;
+  }
+  
+  .or-divider::before {
+    left: 0;
+  }
+  
+  .or-divider::after {
+    right: 0;
+  }
+  
+  .or-divider span {
+    display: inline-block;
+    padding: 0 10px;
+    background-color: #fff;
+    position: relative;
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+  
+  .social-button {
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .social-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .facebook-button {
+    background-color: #1877f2;
+    border-color: #1877f2;
+    color: #fff;
+  }
+  
+  .facebook-button:hover {
+    background-color: #166fe5;
+    border-color: #166fe5;
+    color: #fff;
+  }
+  
+  .google-button {
+    background-color: #fff;
+    border-color: #dadce0;
+    color: #3c4043;
+  }
+  
+  .google-button:hover {
+    background-color: #f8f9fa;
+    border-color: #dadce0;
+    color: #3c4043;
+  }
+  
+  .bi-facebook, .bi-google {
+    font-size: 1.2rem;
+  }
+  
   
