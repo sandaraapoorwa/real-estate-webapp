@@ -1,0 +1,10 @@
+/* Custom CSS for highlighted checkbox */
+.checkbox-highlight .form-check-input:checked {
+    background-color: #007bff; /* Blue background when checked */
+    border-color: #007bff; /* Blue border when checked */
+  }
+  
+  .checkbox-highlight .form-check-input:checked:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25); /* Blue focus glow */
+  }
+  

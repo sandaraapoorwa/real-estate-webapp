@@ -7,6 +7,7 @@ import About from './components/about/About';
 import Contact from './components/contact/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        {/* Footer should be outside Routes so it's always visible */}
+        <Footer />
       </div>
     </Router>
   );

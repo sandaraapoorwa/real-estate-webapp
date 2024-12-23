@@ -1,9 +1,9 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { PersonCircle } from 'react-bootstrap-icons'; // Bootstrap Icons
 import './Header.css';
 import logo from '../Photos/logo.png';
+import SignupPopup from '../signup/SignupPopup'; // Import the SignupPopup component
 
 const Header = () => {
   return (
@@ -31,14 +31,9 @@ const Header = () => {
             <Nav.Link as={Link} to="/about" className="mx-2">About Us</Nav.Link>
             <Nav.Link as={Link} to="/contact" className="mx-2">Contact</Nav.Link>
 
-            {/* Profile Icon */}
-            <Nav.Link 
-              as={Link} 
-              to="/signin" 
-              className="d-flex align-items-center mx-2"
-              title="Sign In / Profile"
-            >
-              <PersonCircle size={30} />
+            {/* Sign Up or Log In Button - using SignupPopup */}
+            <Nav.Link className="mx-2">
+              <SignupPopup />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
