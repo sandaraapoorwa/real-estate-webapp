@@ -78,7 +78,7 @@
             "bedrooms": 4,
             "dateAdded": "2023-05-25",
             "postcodeArea": "BN1",
-            "image": "/images/spacious-family-house.jpg?height=200&width=300"
+            "image": "/Photos/family.jpg"
           },
           {
             "id": 9,
@@ -88,7 +88,7 @@
             "bedrooms": 3,
             "dateAdded": "2023-05-25",
             "postcodeArea": "BN1",
-            "image": "/images/luxury-downtown-penthouse.jpg?height=200&width=300"
+            "image": "/Photos/penthouse.jpg"
           },
           {
             "id": 10,
@@ -98,7 +98,7 @@
             "bedrooms": 5,
             "dateAdded": "2023-05-25",
             "postcodeArea": "BN1",
-            "image": "/images/elegant-suburban-home.jpg?height=200&width=300"
+            "image": "/Photos/suburban2.jpeg"
           },
           {
             "id": 11,
@@ -108,7 +108,17 @@
             "bedrooms": 2,
             "dateAdded": "2023-05-25",
             "postcodeArea": "BN1",
-            "image": "/images/contemporary-loft-apartment.jpg?height=200&width=300"
+            "image": "/Photos/loft1.jpg"
+          },
+          {
+            "id": 12,
+            "title": "Minimal Condominium",
+            "price": 1000000,
+            "type": "flat",
+            "bedrooms": 4,
+            "dateAdded": "2023-05-25",
+            "postcodeArea": "BN1",
+            "image": "/Photos/condo.jpg"
           }
         ]
   }
