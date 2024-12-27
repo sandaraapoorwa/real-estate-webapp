@@ -17,8 +17,7 @@
   color: white;
 }
 .home-container {
-  background-image: url('../Photos/coverd.webp');
-  
+  background-image: linear-gradient(to right, #d6b2a9, #f9f3e7);
 
   
 }

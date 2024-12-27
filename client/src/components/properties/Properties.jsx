@@ -13,22 +13,28 @@ const Properties = () => {
     if (location.state && location.state.searchParams) {
       handleSearch(location.state.searchParams);
     }
+    if (location.state && location.state.selectedProperty) {
+      setSelectedProperty(location.state.selectedProperty);
+    }
   }, [location]);
 
   const handleSearch = (searchParams) => {
     const filteredProperties = propertiesData.properties.filter(property => {
-      const matchesType = searchParams.type === '' || property.type === searchParams.type;
-      const matchesPrice = (searchParams.minPrice === '' || property.price >= parseInt(searchParams.minPrice)) &&
-                           (searchParams.maxPrice === '' || property.price <= parseInt(searchParams.maxPrice));
-      const matchesBedrooms = (searchParams.minBedrooms === '' || property.bedrooms >= parseInt(searchParams.minBedrooms)) &&
-                              (searchParams.maxBedrooms === '' || property.bedrooms <= parseInt(searchParams.maxBedrooms));
-      const matchesDateAdded = searchParams.dateAdded === '' || new Date(property.dateAdded) >= new Date(searchParams.dateAdded);
-      const matchesPostcode = searchParams.postcodeArea === '' || property.postcodeArea.toLowerCase().startsWith(searchParams.postcodeArea.toLowerCase());
-
+      const matchesType = !searchParams.type || property.type === searchParams.type;
+      const matchesPrice = 
+        (!searchParams.minPrice || property.price >= searchParams.minPrice) &&
+        (!searchParams.maxPrice || property.price <= searchParams.maxPrice);
+      const matchesBedrooms = 
+        (!searchParams.minBedrooms || property.bedrooms >= searchParams.minBedrooms) &&
+        (!searchParams.maxBedrooms || property.bedrooms <= searchParams.maxBedrooms);
+      const matchesDateAdded = 
+        !searchParams.dateAdded || new Date(property.dateAdded) >= new Date(searchParams.dateAdded);
+      const matchesPostcode = 
+        !searchParams.postcodeArea || property.postcodeArea.toLowerCase().startsWith(searchParams.postcodeArea.toLowerCase());
+  
       return matchesType && matchesPrice && matchesBedrooms && matchesDateAdded && matchesPostcode;
     });
-
-    setProperties(filteredProperties);
+    setProperties(filteredProperties.length > 0 ? filteredProperties : []);
   };
 
   const handlePropertyClick = (property) => {
@@ -58,6 +64,10 @@ const Properties = () => {
                       <li><strong>Date Added:</strong> {selectedProperty.dateAdded}</li>
                       <li><strong>Postcode Area:</strong> {selectedProperty.postcodeArea}</li>
                     </ul>
+                    <Card.Text className="mt-3">
+                      <strong>Description:</strong>
+                      <p>{selectedProperty.description}</p>
+                    </Card.Text>
                     <Button variant="primary">Contact Agent</Button>
                   </Card.Body>
                 </Col>
@@ -97,3 +107,4 @@ const Properties = () => {
 };
 
 export default Properties;
+

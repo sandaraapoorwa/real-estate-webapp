@@ -1,126 +1,149 @@
 {
-    "properties": [
-        {
-            "id": 1,
-            "title": "Modern Apartment",
-            "price": 250000,
-            "type": "flat",
-            "bedrooms": 2,
-            "dateAdded": "2023-05-01",
-            "postcodeArea": "BR1",
-            "image": "/Photos/apartment.png"
-          },
-            {
-            "id": 2,
-            "title": "Cozy Family Home",
-            "price": 450000,
-            "type": "house",
-            "bedrooms": 4,
-            "dateAdded": "2023-05-05",
-            "postcodeArea": "NW1",
-            "image": "/Photos/home.jpg"
-            },
-        {
-            "id": 3,
-            "title": "Luxury Villa",
-            "price": 1200000,
-            "type": "house",
-            "bedrooms": 5,
-            "dateAdded": "2023-05-10",
-            "postcodeArea": "SW3",
-            "image": "/Photos/luxury.jpg"
-        },
-        {
-            "id": 4,
-            "title": "Urban Loft",
-            "price": 350000,
-            "type": "flat",
-            "bedrooms": 1,
-            "dateAdded": "2023-05-15",
-            "postcodeArea": "E1",
-            "image": "/Photos/loft.jpg"
-        },
-        {
-            "id": 5,
-            "title": "Suburban House",
-            "price": 550000,
-            "type": "house",
-            "bedrooms": 3,
-            "dateAdded": "2023-05-20",
-            "postcodeArea": "SE1",
-            "image": "/Photos/suburban.jpg"
-        },
-        {
-            "id": 6,
-            "title": "Beachfront Condo",
-            "price": 750000,
-            "type": "flat",
-            "bedrooms": 2,
-            "dateAdded": "2023-05-25",
-            "postcodeArea": "BN1",
-            "image": "/Photos/condo.jpeg"
-        },
-        {
-            "id": 7,
-            "title": "Modern Studio Apartment",
-            "price": 750000,
-            "type": "apartment",
-            "bedrooms": 1,
-            "dateAdded": "2023-05-25",
-            "postcodeArea": "BN1",
-            "image": "/Photos/studio.jpg"
-          },
-          {
-            "id": 8,
-            "title": "Spacious Family House",
-            "price": 950000,
-            "type": "house",
-            "bedrooms": 4,
-            "dateAdded": "2023-05-25",
-            "postcodeArea": "BN1",
-            "image": "/Photos/family.jpg"
-          },
-          {
-            "id": 9,
-            "title": "Luxury Downtown Penthouse",
-            "price": 1200000,
-            "type": "penthouse",
-            "bedrooms": 3,
-            "dateAdded": "2023-05-25",
-            "postcodeArea": "BN1",
-            "image": "/Photos/penthouse.jpg"
-          },
-          {
-            "id": 10,
-            "title": "Elegant Suburban Home",
-            "price": 1800000,
-            "type": "house",
-            "bedrooms": 5,
-            "dateAdded": "2023-05-25",
-            "postcodeArea": "BN1",
-            "image": "/Photos/suburban2.jpeg"
-          },
-          {
-            "id": 11,
-            "title": "Contemporary Loft Apartment",
-            "price": 2500000,
-            "type": "apartment",
-            "bedrooms": 2,
-            "dateAdded": "2023-05-25",
-            "postcodeArea": "BN1",
-            "image": "/Photos/loft1.jpg"
-          },
-          {
-            "id": 12,
-            "title": "Minimal Condominium",
-            "price": 1000000,
-            "type": "flat",
-            "bedrooms": 4,
-            "dateAdded": "2023-05-25",
-            "postcodeArea": "BN1",
-            "image": "/Photos/condo.jpg"
-          }
-        ]
-  }
-  
-  
+  "properties": [
+    {
+      "id": 1,
+      "title": "Modern Apartment",
+      "price": 250000,
+      "type": "flat",
+      "bedrooms": 2,
+      "dateAdded": "2023-05-01",
+      "postcodeArea": "BR1",
+      "image": "/Photos/apartment.png",
+      "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
+      "url": "properties/prop1.html"
+    },
+    {
+      "id": 2,
+      "title": "Cozy Family Home",
+      "price": 450000,
+      "type": "house",
+      "bedrooms": 4,
+      "dateAdded": "2023-05-05",
+      "postcodeArea": "NW1",
+      "image": "/Photos/home.jpg",
+      "description": "Charming four-bedroom family home in a quiet residential area. This property offers a spacious living room, a modern kitchen with dining area, and a lovely garden perfect for family gatherings. Upstairs, you'll find four well-sized bedrooms and a family bathroom. The house also features a garage and off-street parking. Located close to excellent schools, parks, and transport links, this home is ideal for growing families.",
+      "url": "properties/prop2.html"
+    },
+    {
+      "id": 3,
+      "title": "Luxury Villa",
+      "price": 1200000,
+      "type": "house",
+      "bedrooms": 5,
+      "dateAdded": "2023-05-10",
+      "postcodeArea": "SW3",
+      "image": "/Photos/luxury.jpg",
+      "description": "Exquisite five-bedroom luxury villa in a prestigious location. This stunning property boasts high-end finishes throughout, including marble flooring, designer kitchen, and smart home technology. The expansive living areas open onto a beautiful terrace with panoramic views. The master suite features a walk-in closet and a spa-like bathroom. Additional amenities include a home theater, wine cellar, and a private pool.",
+      "url": "properties/prop3.html"
+    },
+    {
+      "id": 4,
+      "title": "Urban Loft",
+      "price": 350000,
+      "type": "flat",
+      "bedrooms": 1,
+      "dateAdded": "2023-05-15",
+      "postcodeArea": "E1",
+      "image": "/Photos/loft.jpg",
+      "description": "Stylish one-bedroom urban loft in a converted warehouse. This unique property features exposed brick walls, high ceilings, and large windows that flood the space with natural light. The open-plan living area includes a modern kitchen with high-end appliances. The bedroom is spacious and includes built-in storage. Perfect for young professionals or as a pied-à-terre in the heart of the city.",
+      "url": "properties/prop4.html"
+    },
+    {
+      "id": 5,
+      "title": "Suburban House",
+      "price": 550000,
+      "type": "house",
+      "bedrooms": 3,
+      "dateAdded": "2023-05-20",
+      "postcodeArea": "SE1",
+      "image": "/Photos/suburban.jpg",
+      "description": "Delightful three-bedroom suburban house with a spacious garden. This well-maintained property offers a bright living room, separate dining room, and a modern fitted kitchen. Upstairs, you'll find three comfortable bedrooms and a family bathroom. The house benefits from a conservatory overlooking the beautifully landscaped garden. Located in a friendly neighborhood with easy access to local amenities and good schools.",
+      "url": "properties/prop5.html"
+    },
+    {
+      "id": 6,
+      "title": "Beachfront Condo",
+      "price": 750000,
+      "type": "flat",
+      "bedrooms": 2,
+      "dateAdded": "2023-05-25",
+      "postcodeArea": "BN1",
+      "image": "/Photos/condo.jpeg",
+      "description": "Luxurious two-bedroom beachfront condo with breathtaking ocean views. This modern apartment features floor-to-ceiling windows, an open-plan living area, and a state-of-the-art kitchen. Both bedrooms are en-suite, with the master bedroom offering direct access to the spacious balcony. Residents can enjoy exclusive access to community amenities including a pool, gym, and private beach access.",
+      "url": "properties/prop6.html"
+    },
+    {
+      "id": 7,
+      "title": "Modern Studio Apartment",
+      "price": 750000,
+      "type": "apartment",
+      "bedrooms": 1,
+      "dateAdded": "2023-05-25",
+      "postcodeArea": "BN1",
+      "image": "/Photos/studio.jpg",
+      "description": "Sleek and efficient modern studio apartment in a prime city location. This cleverly designed space maximizes every square foot, featuring a multi-functional living area, a fully equipped kitchenette, and a stylish bathroom. Large windows provide plenty of natural light and city views. Ideal for young professionals or as an investment property.",
+      "url": "properties/prop7.html"
+    },
+    {
+      "id": 8,
+      "title": "Spacious Family House",
+      "price": 950000,
+      "type": "house",
+      "bedrooms": 4,
+      "dateAdded": "2023-05-25",
+      "postcodeArea": "BN1",
+      "image": "/Photos/family.jpg",
+      "description": "Generous four-bedroom family house in a sought-after neighborhood. This property offers ample living space with a large living room, separate dining room, and a modern eat-in kitchen. The master bedroom includes an en-suite bathroom and walk-in closet. The landscaped garden features a patio area perfect for outdoor entertaining. Close to excellent schools and local amenities.",
+      "url": "properties/prop8.html"
+    },
+    {
+      "id": 9,
+      "title": "Luxury Downtown Penthouse",
+      "price": 1200000,
+      "type": "penthouse",
+      "bedrooms": 3,
+      "dateAdded": "2023-05-25",
+      "postcodeArea": "BN1",
+      "image": "/Photos/penthouse.jpg",
+      "description": "Spectacular three-bedroom penthouse in the heart of downtown. This luxurious property boasts panoramic city views, a spacious open-plan living area, and a gourmet kitchen. The master suite includes a lavish bathroom and a private terrace. Two additional en-suite bedrooms, a home office, and a large entertainment terrace complete this extraordinary home. Building amenities include 24/7 concierge service and a rooftop pool.",
+      "url": "properties/prop9.html"
+    },
+    {
+      "id": 10,
+      "title": "Elegant Suburban Home",
+      "price": 1800000,
+      "type": "house",
+      "bedrooms": 5,
+      "dateAdded": "2023-05-25",
+      "postcodeArea": "BN1",
+      "image": "/Photos/suburban2.jpeg",
+      "description": "Magnificent five-bedroom suburban home set on a large plot. This elegant property features a grand entrance hall, formal living and dining rooms, a chef's kitchen, and a family room. The master suite offers a luxury bathroom and dressing room. Outside, you'll find beautifully landscaped gardens, a swimming pool, and a tennis court. Perfect for those seeking space and privacy in a prestigious location.",
+      "url": "properties/prop10.html"
+    },
+    {
+      "id": 11,
+      "title": "Contemporary Loft Apartment",
+      "price": 2500000,
+      "type": "apartment",
+      "bedrooms": 2,
+      "dateAdded": "2023-05-25",
+      "postcodeArea": "BN1",
+      "image": "/Photos/loft1.jpg",
+      "description": "Stunning two-bedroom contemporary loft apartment in a converted industrial building. This unique property showcases original features such as exposed beams and brickwork, combined with modern luxury finishes. The double-height living area is flooded with light from floor-to-ceiling windows. A mezzanine level houses the master bedroom suite. The property also includes a private roof terrace with city views.",
+      "url": "properties/prop11.html"
+    },
+    {
+      "id": 12,
+      "title": "Minimal Condominium",
+      "price": 1000000,
+      "type": "flat",
+      "bedrooms": 4,
+      "dateAdded": "2023-05-25",
+      "postcodeArea": "BN1",
+      "image": "/Photos/condo.jpg",
+      "description": "Sleek and minimalist four-bedroom condominium in a modern high-rise. This sophisticated property features clean lines, neutral tones, and high-end finishes throughout. The open-plan living area includes a designer kitchen with top-of-the-line appliances. All bedrooms are generously sized, with the master suite offering city views. Residents can enjoy building amenities such as a fitness center, communal roof garden, and 24-hour security.",
+      "url": "properties/prop12.html"
+    }
+  ]
+}
+
