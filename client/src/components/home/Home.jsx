@@ -2,19 +2,52 @@ import React from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchBar from '../searchbar/SearchBar';
-import apartment from '../Photos/apartment.png';
-import home from '../Photos/home.jpg';
-import luxury from '../Photos/luxury.jpg';
 import './Home.css';
 
-// Example of featured properties data
+// Featured properties data
 const featuredProperties = [
-  { id: 1, title: 'Modern Apartment', price: 250000, image: apartment, description: 'A sleek and modern apartment in the heart of the city.', bedrooms: 2, bathrooms: 2, area: '1,000 sqft', type: 'flat', dateAdded: '2023-05-01', postcodeArea: 'BR1' },
-  { id: 2, title: 'Cozy Family Home', price: 450000, image: home, description: 'A spacious family home with a large backyard in a quiet neighborhood.', bedrooms: 4, bathrooms: 3, area: '2,500 sqft', type: 'house', dateAdded: '2023-05-05', postcodeArea: 'NW1' },
-  { id: 3, title: 'Luxury Villa', price: 1200000, image: luxury, description: 'An exquisite villa with stunning views and high-end amenities.', bedrooms: 5, bathrooms: 4, area: '4,000 sqft', type: 'house', dateAdded: '2023-05-10', postcodeArea: 'SW3' },
-  { id: 4, title: 'Urban Loft', price: 350000, image: '/Photos/loft.jpg', description: 'A stylish urban loft with modern amenities.', bedrooms: 1, bathrooms: 1, area: '800 sqft', type: 'flat', dateAdded: '2023-05-15', postcodeArea: 'E1' },
-  { id: 5, title: 'Suburban House', price: 550000, image: '/Photos/suburban.jpg', description: 'A comfortable suburban house with a spacious garden.', bedrooms: 3, bathrooms: 2, area: '2,000 sqft', type: 'house', dateAdded: '2023-05-20', postcodeArea: 'SE1' },
-  { id: 6, title: 'Beachfront Condo', price: 750000, image: '/Photos/condo.jpeg', description: 'A luxurious beachfront condo with stunning ocean views.', bedrooms: 2, bathrooms: 2, area: '1,500 sqft', type: 'flat', dateAdded: '2023-05-25', postcodeArea: 'BN1' },
+  {
+    id: 'prop1',
+    title: 'Attractive Family Home',
+    price: 750000,
+    image: '/Photos/home.jpg',
+    description:
+      'Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station.',
+    bedrooms: 3,
+    bathrooms: 2,
+    area: '1,500 sqft',
+    type: 'House',
+    dateAdded: '2022-10-12',
+    location: 'Petts Wood Road, Petts Wood, Orpington BR5',
+  },
+  {
+    id: 'prop2',
+    title: 'Modern Garden Flat',
+    price: 399995,
+    image: 'images/prop2pic1small.jpg',
+    description:
+      'Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat.',
+    bedrooms: 2,
+    bathrooms: 2,
+    area: '1,200 sqft',
+    type: 'Flat',
+    dateAdded: '2022-09-14',
+    location: 'Crofton Road Orpington BR6',
+  },
+  {
+    id: 'prop3',
+    title: 'Luxury Villa',
+    price: 1200000,
+    image: 'images/prop3pic1small.jpg',
+    description:
+      'Exquisite five-bedroom luxury villa in a prestigious location with high-end amenities.',
+    bedrooms: 5,
+    bathrooms: 4,
+    area: '4,000 sqft',
+    type: 'House',
+    dateAdded: '2022-11-05',
+    location: 'Kensington, London SW3',
+  },
 ];
 
 const Home = () => {
@@ -72,38 +105,37 @@ const Home = () => {
       {/* Featured Properties Section */}
       <Container fluid className="my-5">
         <h2 className="text-center mb-4">Featured Properties</h2>
-        <div className="featured-properties-scroll">
-          <Row className="flex-nowrap overflow-auto">
-            {featuredProperties.map((property) => (
-              <Col key={property.id} className="mb-4" style={{ flex: '0 0 auto', width: '300px', marginRight: '15px' }}>
-                <Card className="featured-property-box h-100">
-                  <Card.Img
-                    variant="top"
-                    src={property.image}
-                    alt={property.title}
-                    style={{ height: '200px', objectFit: 'cover' }}
-                  />
-                  <Card.Body className="d-flex flex-column">
-                    <Card.Title>{property.title}</Card.Title>
-                    <Card.Text className="text-primary font-weight-bold">${property.price.toLocaleString()}</Card.Text>
-                    <Button 
-                      variant="primary" 
-                      className="mt-auto"
-                      onClick={() => handlePropertyClick(property)}
-                    >
-                      View Details
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </div>
+        <Row className="justify-content-center">
+          {featuredProperties.map((property) => (
+            <Col key={property.id} md={4} className="mb-4">
+              <Card className="featured-property-box h-100">
+                <Card.Img
+                  variant="top"
+                  src={property.image}
+                  alt={property.title}
+                  style={{ height: '200px', objectFit: 'cover' }}
+                />
+                <Card.Body className="d-flex flex-column">
+                  <Card.Title>{property.title}</Card.Title>
+                  <Card.Text className="text-primary font-weight-bold">
+                  £{property.price.toLocaleString()}
+                  </Card.Text>
+                  <Card.Text>{property.description}</Card.Text>
+                  <Button
+                    variant="primary"
+                    className="mt-auto"
+                    onClick={() => handlePropertyClick(property)}
+                  >
+                    View Details
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
       </Container>
-
     </div>
   );
 };
 
 export default Home;
-
