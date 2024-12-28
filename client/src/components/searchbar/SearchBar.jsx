@@ -102,7 +102,6 @@ const SearchBar = ({ onSearch }) => {
               />
             </div>
           </div>
-
           <div className="search-item">
             <label>Date Added</label>
             <DateTimePicker
