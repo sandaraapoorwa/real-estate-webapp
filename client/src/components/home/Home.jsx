@@ -10,7 +10,7 @@ const featuredProperties = [
     id: 'prop1',
     title: 'Attractive Family Home',
     price: 750000,
-    image: '/Photos/home.jpg',
+    image: '/Photos/home/home.jpg',
     description:
       'Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station.',
     bedrooms: 3,
@@ -24,7 +24,7 @@ const featuredProperties = [
     id: 'prop2',
     title: 'Modern Garden Flat',
     price: 399995,
-    image: 'images/prop2pic1small.jpg',
+    image: '/Photos/apartment/apartment.png',
     description:
       'Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat.',
     bedrooms: 2,
@@ -38,7 +38,7 @@ const featuredProperties = [
     id: 'prop3',
     title: 'Luxury Villa',
     price: 1200000,
-    image: 'images/prop3pic1small.jpg',
+    image: '/Photos/luxury/luxury.jpg',
     description:
       'Exquisite five-bedroom luxury villa in a prestigious location with high-end amenities.',
     bedrooms: 5,

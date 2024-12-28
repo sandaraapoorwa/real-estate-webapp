@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DropdownList, NumberPicker, DateTimePicker } from 'react-widgets';
 import 'react-widgets/styles.css';
-import '../searchbar/SearchBar.css';
+import './SearchBar.css';
+import propertiesData from '../data/properties.json';
 
 const SearchBar = ({ onSearch }) => {
   const navigate = useNavigate();
@@ -16,11 +17,16 @@ const SearchBar = ({ onSearch }) => {
     postcodeArea: ''
   });
 
-  const propertyTypes = [
+  const [propertyTypes, setPropertyTypes] = useState([
     { id: 'any', name: 'Any Type' },
     { id: 'house', name: 'House' },
     { id: 'flat', name: 'Flat' }
-  ];
+  ]);
+
+  useEffect(() => {
+    const types = ['any', ...new Set(propertiesData.properties.map(prop => prop.type.toLowerCase()))];
+    setPropertyTypes(types.map(type => ({ id: type, name: type === 'any' ? 'Any Type' : type.charAt(0).toUpperCase() + type.slice(1) })));
+  }, []);
 
   const handleChange = (field, value) => {
     setSearchParams((prev) => ({ ...prev, [field]: value }));
@@ -29,7 +35,6 @@ const SearchBar = ({ onSearch }) => {
   const handleSearch = (e) => {
     e.preventDefault();
 
-    // Validate input values
     if (searchParams.minPrice && searchParams.maxPrice && searchParams.minPrice > searchParams.maxPrice) {
       alert('Minimum price cannot be greater than maximum price.');
       return;
@@ -39,7 +44,6 @@ const SearchBar = ({ onSearch }) => {
       return;
     }
 
-    // Trigger search and navigate to results
     onSearch(searchParams);
     navigate('/properties', { state: { searchParams } });
   };
@@ -48,7 +52,6 @@ const SearchBar = ({ onSearch }) => {
     <div className="search-bar-container">
       <form onSubmit={handleSearch} className="search-form">
         <div className="search-grid">
-          {/* Property Type */}
           <div className="search-item">
             <label>Property Type</label>
             <DropdownList
@@ -60,7 +63,6 @@ const SearchBar = ({ onSearch }) => {
             />
           </div>
 
-          {/* Price Range */}
           <div className="search-item">
             <label>Price Range</label>
             <div className="price-range">
@@ -81,7 +83,6 @@ const SearchBar = ({ onSearch }) => {
             </div>
           </div>
 
-          {/* Bedrooms */}
           <div className="search-item">
             <label>Bedrooms</label>
             <div className="bedroom-range">
@@ -102,7 +103,6 @@ const SearchBar = ({ onSearch }) => {
             </div>
           </div>
 
-          {/* Date Added */}
           <div className="search-item">
             <label>Date Added</label>
             <DateTimePicker
@@ -112,7 +112,6 @@ const SearchBar = ({ onSearch }) => {
             />
           </div>
 
-          {/* Postcode Area */}
           <div className="search-item">
             <label>Postcode Area</label>
             <input
@@ -124,7 +123,6 @@ const SearchBar = ({ onSearch }) => {
             />
           </div>
 
-          {/* Search Button */}
           <div className="search-item">
             <button type="submit" className="search-button">
               <i className="bi bi-search"></i> Search
@@ -137,3 +135,4 @@ const SearchBar = ({ onSearch }) => {
 };
 
 export default SearchBar;
+
