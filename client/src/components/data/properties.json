@@ -8,13 +8,9 @@
       "tenure": "Freehold",
       "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
       "location": "Petts Wood Road, Petts Wood, Orpington BR5",
-      "picture": "/Photos/home.jpg",
+      "picture": "/Photos/home/home.jpg",
       "url": "/html/prop1.html",
-      "added": {
-        "month": "October",
-        "day": 12,
-        "year": 2022
-      }
+      "Dateadded": "2022/12/3"
     },
     {
       "id": "prop2",
@@ -24,7 +20,7 @@
       "tenure": "Freehold",
       "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
       "location": "Crofton Road Orpington BR6",
-      "picture": "/Photos/apartment.png",
+      "picture": "/Photos/apartment/apartment.png",
       "url": "/html/prop2.html",
       "added": {
         "month": "September",
@@ -40,7 +36,7 @@
       "tenure": "Freehold",
       "description": "Exquisite five-bedroom luxury villa in a prestigious location. This stunning property boasts high-end finishes throughout, including marble flooring, designer kitchen, and smart home technology. The expansive living areas open onto a beautiful terrace with panoramic views. The master suite features a walk-in closet and a spa-like bathroom. Additional amenities include a home theater, wine cellar, and a private pool.",
       "location": "Kensington, London SW3",
-      "picture": "/Photos/luxury.jpg",
+      "picture": "/Photos/luxury/luxury.jpg",
       "url": "/html/prop3.html",
       "added": {
         "month": "November",
@@ -56,7 +52,7 @@
       "tenure": "Leasehold",
       "description": "Stylish one-bedroom urban loft in a converted warehouse. This unique property features exposed brick walls, high ceilings, and large windows that flood the space with natural light. The open-plan living area includes a modern kitchen with high-end appliances. The bedroom is spacious and includes built-in storage. Perfect for young professionals or as a pied-à-terre in the heart of the city.",
       "location": "Shoreditch, London E1",
-      "picture": "/Photos/loft.jpg",
+      "picture": "/Photos/loft/loft.jpg",
       "url": "/html/prop4.html",
       "added": {
         "month": "December",
@@ -72,7 +68,7 @@
       "tenure": "Freehold",
       "description": "Delightful six-bedroom suburban house with a spacious garden. This well-maintained property offers a bright living room, separate dining room, and a modern fitted kitchen. Upstairs, you'll find three comfortable bedrooms and a family bathroom. The house benefits from a conservatory overlooking the beautifully landscaped garden. Located in a friendly neighborhood with easy access to local amenities and good schools.",
       "location": "Bermondsey, London SE1",
-      "picture": "/Photos/family.jpg",
+      "picture": "/Photos/family/family.jpg",
       "url": "/html/prop5.html",
       "added": {
         "month": "January",
@@ -88,7 +84,7 @@
       "tenure": "Leasehold",
       "description": "Luxurious two-bedroom beachfront condo with breathtaking ocean views. This modern apartment features floor-to-ceiling windows, an open-plan living area, and a state-of-the-art kitchen. Both bedrooms are en-suite, with the master bedroom offering direct access to the spacious balcony. Residents can enjoy exclusive access to community amenities including a pool, gym, and private beach access.",
       "location": "Brighton, East Sussex BN1",
-      "picture": "/Photos/condo.jpeg",
+      "picture": "/Photos/condo/condo.jpeg",
       "url": "/html/prop6.html",
       "added": {
         "month": "February",
@@ -104,7 +100,7 @@
       "tenure": "Leasehold",
       "description": "Sleek and efficient modern studio apartment in a prime city location. This cleverly designed space maximizes every square foot, featuring a multi-functional living area, a fully equipped kitchenette, and a stylish bathroom. Large windows provide plenty of natural light and city views. Ideal for young professionals or as an investment property.",
       "location": "Manchester City Centre, M1",
-      "picture": "/Photos/studio.jpg",
+      "picture": "/Photos/studio/studio.jpg",
       "url": "/html/prop7.html",
       "added": {
         "month": "March",
@@ -114,3 +110,4 @@
     }
   ]
 }
+
