@@ -22,11 +22,7 @@
       "location": "Crofton Road Orpington BR6",
       "picture": "/Photos/apartment/apartment.png",
       "url": "/html/prop2.html",
-      "added": {
-        "month": "September",
-        "day": 14,
-        "year": 2022
-      }
+      "Dateadded": "2023/11/9"
     },
     {
       "id": "prop3",
@@ -38,11 +34,7 @@
       "location": "Kensington, London SW3",
       "picture": "/Photos/luxury/luxury.jpg",
       "url": "/html/prop3.html",
-      "added": {
-        "month": "November",
-        "day": 5,
-        "year": 2022
-      }
+      "Dateadded": "2024/10/5"
     },
     {
       "id": "prop4",
@@ -54,11 +46,7 @@
       "location": "Shoreditch, London E1",
       "picture": "/Photos/loft/loft.jpg",
       "url": "/html/prop4.html",
-      "added": {
-        "month": "December",
-        "day": 1,
-        "year": 2022
-      }
+      "Dateadded": "2022/9/31"
     },
     {
       "id": "prop5",
@@ -70,11 +58,7 @@
       "location": "Bermondsey, London SE1",
       "picture": "/Photos/family/family.jpg",
       "url": "/html/prop5.html",
-      "added": {
-        "month": "January",
-        "day": 15,
-        "year": 2023
-      }
+      "Dateadded": "2024/2/23"
     },
     {
       "id": "prop6",
@@ -86,11 +70,7 @@
       "location": "Brighton, East Sussex BN1",
       "picture": "/Photos/condo/condo.jpeg",
       "url": "/html/prop6.html",
-      "added": {
-        "month": "February",
-        "day": 20,
-        "year": 2023
-      }
+      "Dateadded": "2021/8/4"
     },
     {
       "id": "prop7",
@@ -102,11 +82,7 @@
       "location": "Manchester City Centre, M1",
       "picture": "/Photos/studio/studio.jpg",
       "url": "/html/prop7.html",
-      "added": {
-        "month": "March",
-        "day": 8,
-        "year": 2023
-      }
+      "Dateadded": "2023/5/14"
     }
   ]
 }
