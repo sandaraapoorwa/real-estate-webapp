@@ -109,18 +109,3 @@
   margin-top: 10px;
   font-size: 0.9rem;
 }
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .retro-title {
-    font-size: 1.5rem;
-  }
-  
-  .team-image {
-    height: 250px;
-  }
-  
-  .retro-border {
-    padding: 20px;
-  }
-}

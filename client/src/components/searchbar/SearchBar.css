@@ -1,5 +1,5 @@
 .search-bar-container {
-  background: rgba(252, 243, 243, 0.5); /* Semi-transparent background */
+  background: rgba(246, 245, 245, 0.5); /* Semi-transparent background */
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for separation */
@@ -39,7 +39,7 @@
 .search-button {
   width: 100%;
   padding: 0.75rem;
-  background-color: #007bff;
+  background-color: #638264;
   color: white;
   border: none;
   border-radius: 4px;
@@ -52,27 +52,7 @@
   background-color: #0056b3;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .search-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 768px) {
-  .search-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .search-bar-container {
-    padding: 1rem;
-  }
-
-  .price-range,
-  .bedroom-range {
-    flex-direction: column;
-  }
-}
 
 /* React Widgets Custom Styling */
 .rw-widget {

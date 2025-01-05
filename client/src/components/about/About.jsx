@@ -37,8 +37,6 @@ const About = () => {
         </Col>
       </Row>
 
-      
-
 
       {/* Why Choose Us Section */}
       <Row className={`about-section ${visibleSections.includes('whyChooseUs') ? 'visible' : ''}`}>
