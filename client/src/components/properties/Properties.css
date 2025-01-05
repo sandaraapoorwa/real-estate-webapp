@@ -1,9 +1,12 @@
+/* General Styling */
 .nav-tabs {
   margin-bottom: 20px;
 }
 
 .nav-tabs .nav-link {
   color: #495057;
+  padding: 0.5rem 1rem;
+  position: relative;
 }
 
 .nav-tabs .nav-link.active {
@@ -21,7 +24,6 @@
   transform: scale(1.05); /* Slightly enlarge the card */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
-
 
 .card-body {
   flex-grow: 1;
@@ -45,17 +47,15 @@
 .btn-link:hover {
   color: #0056b3;
 }
-.favorite-count {
-  background-color: rgb(6, 167, 16);
-  color: white;
-  border-radius: 2%;
-  padding: 2px 6px;
-  font-size: 0.8rem;
-  margin-left: 5px;
-}
 
-.nav-link {
-  position: relative;
+/* Sidebar Styling */
+.sidebar {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-right: 2px solid #ddd;
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 .favorite-count {
@@ -70,15 +70,29 @@
   transform: translate(50%, -50%);
 }
 
-.nav-tabs .nav-link {
-  padding: 0.5rem 1rem;
-  position: relative;
+.sidebar h4 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #495057;
 }
 
+/* Layout Adaptation */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    border-right: none;
+    margin-bottom: 20px;
+    height: auto;
+  }
+
+  .card-img-top {
+    height: 150px; /* Adjust image height for smaller screens */
+  }
+}
+
+/* Active Nav-link */
 .nav-tabs .nav-link.active {
   font-weight: bold;
+  color: #007bff; /* Color change for active link */
 }
-
-
-
 
