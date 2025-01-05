@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import SearchBar from '../searchbar/SearchBar';
 import './Home.css';
 
@@ -16,6 +16,7 @@ const featuredProperties = [
     bedrooms: 3,
     bathrooms: 2,
     area: '1,500 sqft',
+    url: '/html/prop1.html', // Ensure proper relative path for HTML files in public directory
     type: 'House',
     dateAdded: '2022-10-12',
     location: 'Petts Wood Road, Petts Wood, Orpington BR5',
@@ -30,6 +31,7 @@ const featuredProperties = [
     bedrooms: 2,
     bathrooms: 2,
     area: '1,200 sqft',
+    url: '/html/prop2.html',
     type: 'Flat',
     dateAdded: '2022-09-14',
     location: 'Crofton Road Orpington BR6',
@@ -44,6 +46,7 @@ const featuredProperties = [
     bedrooms: 5,
     bathrooms: 4,
     area: '4,000 sqft',
+    url: '/html/prop3.html',
     type: 'House',
     dateAdded: '2022-11-05',
     location: 'Kensington, London SW3',
@@ -51,15 +54,15 @@ const featuredProperties = [
 ];
 
 const Home = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook for programmatic navigation
 
   const handleSearch = (searchParams) => {
     console.log('Search params:', searchParams);
     // Implement search functionality here
   };
 
-  const handlePropertyClick = (property) => {
-    navigate('/properties', { state: { selectedProperty: property } });
+  const handlePropertyClick = (url) => {
+    window.location.href = url; // Use direct navigation to static HTML file
   };
 
   return (
@@ -81,23 +84,27 @@ const Home = () => {
           <Col md={4} className="mb-4">
             <h2>Find Properties Through Google Maps</h2>
             <p>Explore our wide range of properties to find your perfect home.</p>
-            <Link to="/properties">
+            <a 
+              href="https://www.google.com/maps" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               <Button variant="primary">Open Google Maps</Button>
-            </Link>
+            </a>
           </Col>
           <Col md={4} className="mb-4">
             <h2>About Us</h2>
             <p>Learn more about our company and our commitment to your success.</p>
-            <Link to="/about">
-              <Button variant="primary">About Dream Home Realty</Button>
-            </Link>
+            <Button variant="primary" onClick={() => navigate('/about')}>
+              About Dream Home Realty
+            </Button>
           </Col>
           <Col md={4} className="mb-4">
             <h2>Contact Us</h2>
             <p>Get in touch with our team for personalized assistance.</p>
-            <Link to="/contact">
-              <Button variant="primary">Contact Us</Button>
-            </Link>
+            <Button variant="primary" onClick={() => navigate('/contact')}>
+              Contact Us
+            </Button>
           </Col>
         </Row>
       </Container>
@@ -118,13 +125,13 @@ const Home = () => {
                 <Card.Body className="d-flex flex-column">
                   <Card.Title>{property.title}</Card.Title>
                   <Card.Text className="text-primary font-weight-bold">
-                  £{property.price.toLocaleString()}
+                    £{property.price.toLocaleString()}
                   </Card.Text>
                   <Card.Text>{property.description}</Card.Text>
                   <Button
                     variant="primary"
                     className="mt-auto"
-                    onClick={() => handlePropertyClick(property)}
+                    onClick={() => handlePropertyClick(property.url)} // Direct navigation
                   >
                     View Details
                   </Button>

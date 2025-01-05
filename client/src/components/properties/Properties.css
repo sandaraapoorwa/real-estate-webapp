@@ -1,43 +1,131 @@
-/* General Styling */
-.nav-tabs {
-  margin-bottom: 20px;
-}
-
-.nav-tabs .nav-link {
-  color: #495057;
-  padding: 0.5rem 1rem;
+/* Main Layout */
+.properties-container {
+  display: flex;
+  min-height: 100vh;
   position: relative;
 }
 
-.nav-tabs .nav-link.active {
+/* Favorites Sidebar */
+.favorites-sidebar {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-right: 2px solid #ddd;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.favorites-sidebar.show {
+  left: 0;
+}
+
+.favorites-sidebar h4 {
+  font-size: 1.2rem;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
-.card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+.favorites-list {
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
 }
 
-.card:hover {
-  transform: scale(1.05); /* Slightly enlarge the card */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+.favorite-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.favorite-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.favorite-card .card-img-top {
+  height: 100px;
+  object-fit: cover;
+}
+
+/* Favorites Toggle Button */
+.favorites-toggle-btn {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1001;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: left 0.3s ease-in-out;
+}
+
+.favorites-toggle-btn:hover {
+  background-color: #0056b3;
+}
+
+.favorites-sidebar.show + .favorites-toggle-btn {
+  left: 300px;
+}
+
+/* Drag and Drop Styles */
+.favorite-card-wrapper {
+  transition: background-color 0.2s ease;
+}
+
+.favorite-card-wrapper.is-dragging {
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+
+/* Main Properties Section */
+.properties-section {
+  padding: 20px;
+  margin-left: 0;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.favorites-sidebar.show + .properties-section {
+  margin-left: 300px;
+}
+
+/* Property Cards */
+.property-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.property-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.property-card.is-dragging {
+  opacity: 0.5;
+}
+
+.property-card img {
+  height: 200px;
+  object-fit: cover;
 }
 
 .card-body {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-text {
-  flex-grow: 1;
+  margin-bottom: 15px;
 }
 
-.card-img-top {
-  height: 200px; /* Set a fixed height for images */
-  object-fit: cover; /* Ensure images cover the area without distortion */
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .btn-link {
@@ -48,51 +136,30 @@
   color: #0056b3;
 }
 
-/* Sidebar Styling */
-.sidebar {
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-right: 2px solid #ddd;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-}
-
-.favorite-count {
-  background-color: rgb(6, 167, 16);
-  color: white;
-  border-radius: 50%;
-  padding: 2px 6px;
-  font-size: 0.8rem;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(50%, -50%);
-}
-
-.sidebar h4 {
-  margin-bottom: 20px;
-  font-weight: bold;
-  color: #495057;
-}
-
-/* Layout Adaptation */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .sidebar {
-    position: relative;
-    border-right: none;
-    margin-bottom: 20px;
-    height: auto;
+  .favorites-sidebar {
+    width: 100%;
+    left: -100%;
   }
 
-  .card-img-top {
-    height: 150px; /* Adjust image height for smaller screens */
+  .favorites-sidebar.show {
+    left: 0;
   }
-}
 
-/* Active Nav-link */
-.nav-tabs .nav-link.active {
-  font-weight: bold;
-  color: #007bff; /* Color change for active link */
+  .favorites-toggle-btn {
+    top: 10px;
+    left: 10px;
+    transform: none;
+  }
+
+  .favorites-sidebar.show + .favorites-toggle-btn {
+    left: calc(100% - 50px);
+  }
+
+  .properties-section {
+    margin-left: 0 !important;
+    padding-top: 60px;
+  }
 }
 

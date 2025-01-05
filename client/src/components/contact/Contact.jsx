@@ -12,12 +12,18 @@ const Contact = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
+
+    // You can send the form data to an API here for processing
+
     setShowAlert(true);
     setFormData({ name: '', email: '', message: '' });
     setTimeout(() => setShowAlert(false), 5000);
@@ -26,7 +32,7 @@ const Contact = () => {
   return (
     <Container className="contact-container my-5">
       <h1 className="text-center mb-4">Contact Us</h1>
-      
+
       {showAlert && (
         <Alert variant="success" onClose={() => setShowAlert(false)} dismissible>
           Thank you for your message. We'll get back to you soon!
@@ -39,7 +45,7 @@ const Contact = () => {
             <Card.Body>
               <h3 className="text-center mb-4">Send Us a Message</h3>
               <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="formName">
                   <Form.Label>Name</Form.Label>
                   <Form.Control
                     type="text"
@@ -48,9 +54,10 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     placeholder="Your Name"
+                    aria-label="Your name"
                   />
                 </Form.Group>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="formEmail">
                   <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="email"
@@ -59,9 +66,10 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     placeholder="Your Email"
+                    aria-label="Your email address"
                   />
                 </Form.Group>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="formMessage">
                   <Form.Label>Message</Form.Label>
                   <Form.Control
                     as="textarea"
@@ -71,6 +79,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     placeholder="Your Message"
+                    aria-label="Your message"
                   />
                 </Form.Group>
                 <Button variant="primary" type="submit" className="w-100">
