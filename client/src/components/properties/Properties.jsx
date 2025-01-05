@@ -6,6 +6,10 @@ import propertiesData from '../data/properties.json';
 import FavoritesTab from './FavoritesTab';
 import './Properties.css';
 
+const FavoriteCount = ({ count }) => (
+  <span className="favorite-count">{count}</span>
+);
+
 const Properties = () => {
   const [properties, setProperties] = useState(propertiesData.properties);
   const [favorites, setFavorites] = useState([]);
@@ -44,7 +48,7 @@ const Properties = () => {
       <Card>
         <Card.Img variant="top" src={property.picture} alt={property.type} />
         <Card.Body>
-          <Card.Title>{property.type} - {property.bedrooms} Beds</Card.Title>
+          <Card.Title>{property.name} - {property.bedrooms} Beds</Card.Title>
           <Card.Text>
             {property.location}
             <br />
@@ -85,8 +89,13 @@ const Properties = () => {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link active={activeTab === 'favorites'} onClick={() => setActiveTab('favorites')}>
+          <Nav.Link 
+            active={activeTab === 'favorites'} 
+            onClick={() => setActiveTab('favorites')}
+            className="d-flex align-items-center position-relative px-4 py-2"
+          >
             Favorites
+            {favorites.length > 0 && <FavoriteCount count={favorites.length} />}
           </Nav.Link>
         </Nav.Item>
       </Nav>

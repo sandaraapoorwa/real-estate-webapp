@@ -30,7 +30,6 @@ const Header = () => {
             <Nav.Link as={Link} to="/properties" className="mx-2">Properties</Nav.Link>
             <Nav.Link as={Link} to="/about" className="mx-2">About Us</Nav.Link>
             <Nav.Link as={Link} to="/contact" className="mx-2">Contact</Nav.Link>
-
             {/* Sign Up or Log In Button - using SignupPopup */}
             <Nav.Link className="mx-2">
               <SignupPopup />

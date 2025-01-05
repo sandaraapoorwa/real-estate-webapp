@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="propcss.css">
 </head>
 <body>
-  <header class="bg-secondary text-white text-center py-4">
+  <header class="bg-primary text-white text-center py-4">
     <h1>Urban Loft in Shoreditch</h1>
   </header>
   
   <main class="container mt-4">
-    <section class="row">
+    <div class="row">
       <div class="col-md-6">
         <img src="/Photos/loft/loft.jpg" class="img-fluid rounded shadow-sm" alt="Urban Loft in Shoreditch">
       </div>
@@ -28,19 +28,19 @@
           <li class="list-group-item"><strong>Bedrooms:</strong> 1</li>
         </ul>
         <p class="mt-3"><strong>Description:</strong> Stylish one-bedroom urban loft in a converted warehouse. This unique property features exposed brick walls, high ceilings, and large windows that flood the space with natural light...</p>
-        <button id="contactBtn" class="btn btn-primary btn-lg mt-3">
+        <button id="contactBtn" class="btn btn-success btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#contactModal">
           <i class="fas fa-phone-alt me-2"></i>Contact Agent
         </button>
       </div>
-    </section>
+    </div>
 
     <section class="mt-5">
       <h2 class="text-center mb-4">Location on Google Maps</h2>
-      <div class="embed-responsive embed-responsive-16by9 rounded shadow-sm">
+      <div class="ratio ratio-16x9">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.512426178141!2d-0.07613237603815142!3d51.5245303727404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761caacb3d9c91%3A0x314ab2b9b5b9cba5!2sShoreditch%2C%20London%20E1!5e0!3m2!1sen!2suk!4v1693479905693!5m2!1sen!2suk" 
           width="100%" 
-          height="400" 
+          height="100%" 
           style="border:0;" 
           allowfullscreen="" 
           loading="lazy" 
@@ -50,7 +50,7 @@
     </section>
 
     <div class="text-center mt-5">
-      <a href="/properties.html" class="btn btn-secondary btn-lg">
+      <a href="/properties.html" class="btn btn-primary btn-lg">
         <i class="fas fa-arrow-left me-2"></i>Back to Properties
       </a>
     </div>
@@ -76,7 +76,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="tel:+449876543210" class="btn btn-primary">Call Now</a>
+          <a href="tel:+449876543210" class="btn btn-success">Call Now</a>
         </div>
       </div>
     </div>

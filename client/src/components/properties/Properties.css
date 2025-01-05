@@ -45,4 +45,40 @@
 .btn-link:hover {
   color: #0056b3;
 }
+.favorite-count {
+  background-color: rgb(6, 167, 16);
+  color: white;
+  border-radius: 2%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.favorite-count {
+  background-color: rgb(6, 167, 16);
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.nav-tabs .nav-link {
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.nav-tabs .nav-link.active {
+  font-weight: bold;
+}
+
+
+
 
