@@ -4,6 +4,8 @@
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for separation */
   backdrop-filter: blur(5px); /* Optional: Adds a subtle blur effect to the background */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .search-grid {
@@ -52,7 +54,24 @@
   background-color: #0056b3;
 }
 
+/* Media Query for Tablets */
+@media (max-width: 1024px) {
+  .search-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .search-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .search-button {
+    margin-top: 1rem;
+  }
+}
 
 /* React Widgets Custom Styling */
 .rw-widget {
@@ -71,4 +90,3 @@
   border-color: #007bff;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
-

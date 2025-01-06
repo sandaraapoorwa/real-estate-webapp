@@ -3,7 +3,7 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 50px 20px;
-  background-color: #ffffff;
+  background-color: #ede0ca;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -43,7 +43,7 @@
   display: block;
   width: 60px;
   height: 4px;
-  background: #2980b9;
+  background: #6d7969;
   margin: 10px auto;
 }
 
@@ -73,7 +73,7 @@
 
 .feature-list li::before {
   content: "✔";
-  color: #2980b9;
+  color: #466252;
   position: absolute;
   left: 0;
   font-size: 1.2rem;
@@ -112,7 +112,7 @@
 
 .team-caption {
   font-size: 1rem;
-  color: #2980b9;
+  color: #3e553e;
   font-weight: 600;
   margin-top: 12px;
 }

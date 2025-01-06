@@ -13,7 +13,6 @@ const Properties = () => {
   const [showFavorites, setShowFavorites] = useState(false);
   const location = useLocation();
 
-  // Filter properties based on search params in location state
   useEffect(() => {
     if (location.state && location.state.searchParams) {
       const { type, minPrice, maxPrice, minBedrooms, maxBedrooms, dateAdded, postcodeArea } = location.state.searchParams;
@@ -35,23 +34,18 @@ const Properties = () => {
     }
   }, [location.state]);
 
-  // Toggle favorite property
   const handleFavoriteToggle = (propertyId) => {
     setFavorites((prev) =>
       prev.includes(propertyId) ? prev.filter((id) => id !== propertyId) : [...prev, propertyId]
     );
   };
 
-  // Reorder favorites
   const handleReorderFavorites = (newFavorites) => {
     setFavorites(newFavorites);
   };
 
-  // Handle drag end event
   const onDragEnd = (result) => {
-    if (!result.destination) {
-      return;
-    }
+    if (!result.destination) return;
 
     const { source, destination } = result;
 
@@ -70,26 +64,46 @@ const Properties = () => {
     }
   };
 
-  // Render each property card
   const renderPropertyCard = (property, index) => (
     <Draggable key={property.id} draggableId={property.id.toString()} index={index}>
       {(provided, snapshot) => (
-        <Col sm={12} md={6} lg={4} className="mb-4" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-          <Card className={`property-card ${snapshot.isDragging ? 'is-dragging' : ''}`}>
-            <Card.Img variant="top" src={property.picture} alt={property.type} />
-            <Card.Body>
-              <Card.Title>{property.name} - {property.bedrooms} Beds</Card.Title>
-              <Card.Text>
-                {property.location}
-                <br />
-                £{property.price.toLocaleString()}
-                <br />
-                Added: {property.Dateadded}
+        <Col xs={12} md={6} lg={4} className="mb-4" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+          <Card className={`property-card h-100 ${snapshot.isDragging ? 'is-dragging' : ''}`}>
+            <div className="property-image-container">
+              <Card.Img 
+                variant="top" 
+                src={property.picture} 
+                alt={property.type}
+                className="property-image"
+              />
+            </div>
+            <Card.Body className="d-flex flex-column">
+              <Card.Title className="property-title">
+                {property.name} - {property.bedrooms} Beds
+              </Card.Title>
+              <Card.Text className="property-details">
+                <span className="location">{property.location}</span>
+                <span className="price">£{property.price.toLocaleString()}</span>
+                <span className="date-added">Added: {new Date(property.Dateadded).toLocaleDateString()}</span>
               </Card.Text>
-              <div className="d-flex justify-content-between align-items-center">
-                <Button variant="primary" onClick={() => window.open(property.url, '_blank')}>View Details</Button>
-                <Button variant="link" className="p-0" onClick={() => handleFavoriteToggle(property.id)}>
-                  {favorites.includes(property.id) ? <BsBookmarkFill size={20} /> : <BsBookmark size={20} />}
+              <div className="mt-auto d-flex justify-content-between align-items-center">
+                <Button 
+                  variant="primary" 
+                  className="view-details-btn"
+                  onClick={() => window.open(property.url, '_blank')}
+                >
+                  View Details
+                </Button>
+                <Button 
+                  variant="link" 
+                  className="favorite-button" 
+                  onClick={() => handleFavoriteToggle(property.id)}
+                  aria-label={favorites.includes(property.id) ? "Remove from favorites" : "Add to favorites"}
+                >
+                  {favorites.includes(property.id) ? 
+                    <BsBookmarkFill size={20} className="text-primary" /> : 
+                    <BsBookmark size={20} />
+                  }
                 </Button>
               </div>
             </Card.Body>
@@ -101,38 +115,71 @@ const Properties = () => {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Container fluid className="properties-container">
-        <Button className="favorites-toggle-btn" onClick={() => setShowFavorites(!showFavorites)} aria-expanded={showFavorites}>
-          {showFavorites ? <BsChevronLeft /> : <BsChevronRight />}
-          <span className="sr-only">Toggle Favorites</span>
-          {favorites.length > 0 && <span className="favorites-count"> ({favorites.length})</span>}
-        </Button>
-        <Row>
-          {/* Collapsible Sidebar for Favorites */}
-          <Col sm={12} md={3} lg={2} className={`favorites-sidebar ${showFavorites ? 'show' : ''}`}>
-            <h4>Favorites</h4>
-            <FavoritesTab favorites={favorites} properties={properties} onFavoriteToggle={handleFavoriteToggle} onReorderFavorites={handleReorderFavorites} />
-          </Col>
+      <div className="properties-page">
+        <Container fluid className="properties-container">
+          <Button 
+            className={`favorites-toggle-btn ${showFavorites ? 'expanded' : ''}`}
+            onClick={() => setShowFavorites(!showFavorites)} 
+            aria-expanded={showFavorites}
+          >
+            {showFavorites ? <BsChevronLeft /> : <BsChevronRight />}
+            <span className="sr-only">Toggle Favorites</span>
+            {favorites.length > 0 && 
+              <span className="favorites-count">({favorites.length})</span>
+            }
+          </Button>
 
-          {/* Main Properties Section */}
-          <Col sm={12} md={showFavorites ? 9 : 12} lg={showFavorites ? 10 : 12} className="properties-section">
-            <Droppable droppableId="properties-list" direction="horizontal">
-              {(provided) => (
-                <Row {...provided.droppableProps} ref={provided.innerRef}>
-                  {properties.length > 0 ? (
-                    properties.map(renderPropertyCard)
-                  ) : (
-                    <Col><p>No properties match your search criteria.</p></Col>
-                  )}
-                  {provided.placeholder}
-                </Row>
-              )}
-            </Droppable>
-          </Col>
-        </Row>
-      </Container>
+          <Row className="g-0">
+            <Col 
+              md={3} 
+              lg={2} 
+              className={`favorites-sidebar ${showFavorites ? 'show' : ''}`}
+            >
+              <div className="favorites-content">
+                <h4>Favorites</h4>
+                <FavoritesTab 
+                  favorites={favorites} 
+                  properties={properties} 
+                  onFavoriteToggle={handleFavoriteToggle} 
+                  onReorderFavorites={handleReorderFavorites} 
+                />
+              </div>
+            </Col>
+
+            <Col 
+              xs={12} 
+              md={showFavorites ? 9 : 12} 
+              lg={showFavorites ? 10 : 12} 
+              className="properties-section"
+            >
+              <Droppable droppableId="properties-list" direction="horizontal">
+                {(provided) => (
+                  <Row 
+                    {...provided.droppableProps} 
+                    ref={provided.innerRef}
+                    className="properties-grid g-4"
+                  >
+                    {properties.length > 0 ? (
+                      properties.map(renderPropertyCard)
+                    ) : (
+                      <Col xs={12}>
+                        <div className="no-results">
+                          <p>No properties match your search criteria.</p>
+                        </div>
+                      </Col>
+                    )}
+                    {provided.placeholder}
+                  </Row>
+                )}
+              </Droppable>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </DragDropContext>
   );
 };
 
 export default Properties;
+
+ 

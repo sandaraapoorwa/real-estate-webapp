@@ -2,7 +2,7 @@
 
   /* Hero Section */
 .hero-section {
-  background-image: linear-gradient(rgba(236, 233, 233, 0.5), rgba(0, 0, 0, 0.5)), url('../Photos/cover2.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Photos/cover2.jpg');
   background-size: cover;
   background-position: center;
   padding: 100px 0;
@@ -14,6 +14,7 @@
   margin-bottom: 2rem;
   text-shadow: 2px 2px 4px rgba(11, 225, 54, 0.5);
 }
+
 
 /* Main content */
 .home-container h2 {
