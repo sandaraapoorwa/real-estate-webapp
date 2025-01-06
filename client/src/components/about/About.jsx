@@ -47,32 +47,6 @@ const About = () => {
           </ul>
         </Col>
       </Row>
-
-      {/* Team Section */}
-      <Row className={`about-section ${visibleSections.includes('team') ? 'visible' : ''}`}>
-        <Col md={12}>
-          <h2 className="section-title">Our Team</h2>
-          <p className="section-text">
-            Our team of experienced real estate professionals is committed to providing personalized service and expert guidance throughout your home-buying or selling journey. We pride ourselves on our in-depth market knowledge and dedication to client satisfaction.
-          </p>
-        </Col>
-      </Row>
-
-      {/* Team Images Section */}
-      <Row className={`team-images-row ${visibleSections.includes('teamImages') ? 'visible' : ''}`}>
-        <Col md={4} className="team-member">
-          <img src="/Photos/member.jpg" alt="Team Member 1" className="team-image" />
-          <p className="team-caption">John Doe - Real Estate Agent</p>
-        </Col>
-        <Col md={4} className="team-member">
-          <img src="/Photos/member2.jpg" alt="Team Member 2" className="team-image" />
-          <p className="team-caption">Jane Smith - Property Consultant</p>
-        </Col>
-        <Col md={4} className="team-member">
-          <img src="/Photos/member3.jpeg" alt="Team Member 3" className="team-image" />
-          <p className="team-caption">Emily Johnson - Marketing Specialist</p>
-        </Col>
-      </Row>
     </Container>
   );
 };
